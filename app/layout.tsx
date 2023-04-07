@@ -1,4 +1,4 @@
-import Header from "./Header";
+import Header from "@/components/Header";
 import "./globals.css";
 
 export const metadata = {
@@ -12,10 +12,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html data-theme="bumblebee" lang="en">
       <body>
         <Header />
-        <section className="p-8">{children}</section>
+        <main className="p-8">{children}</main>
       </body>
     </html>
   );
