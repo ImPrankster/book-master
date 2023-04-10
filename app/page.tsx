@@ -1,16 +1,33 @@
-import { supabase } from "../utils/supabase";
+import { supabase } from "@/utils/supabase";
 
 import InfoCard from "@/components/InfoCard";
+import Link from "next/link";
 
 export default async function Home() {
   //retrive the data
-  const { data, error } = await supabase.from("book").select();
+  const { data, error } = await supabase
+    .from("book")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .range(0, 9);
 
   if (error) {
     throw error;
   }
 
   if (!data) {
+    throw new Error("No data found");
+  }
+
+  const { data: categoryData, error: categoryError } = await supabase
+    .from("category")
+    .select("category");
+
+  if (categoryError) {
+    throw error;
+  }
+
+  if (!categoryData) {
     throw new Error("No data found");
   }
 
@@ -21,14 +38,33 @@ export default async function Home() {
         <h2 className="text-2xl font-bold">- A place for all your books -</h2>
       </article>
       <div className="mt-4">
-        <label htmlFor="" className="p-5 text-xl font-bold italic">
-          Newly released
+        <label htmlFor="" className="p-5 text-2xl font-bold italic">
+          Newly added
         </label>
-        <section className="rounded-box h-full p-4">
+        <section className="rounded-box m-4 grid h-full grid-flow-col space-x-4 overflow-x-auto p-4 ring-2 ring-base-300">
           {data.map((info) => (
             <InfoCard data={info} />
           ))}
         </section>
+      </div>
+      <div className="mt-8">
+        <label htmlFor="" className="p-5 text-2xl font-bold italic">
+          Categories
+        </label>
+        <div className="rounded-box flex h-full flex-wrap justify-center p-4">
+          {categoryData.map((entry) => {
+            if (entry.category) {
+              return (
+                <Link
+                  href={"/categories/" + entry.category.replaceAll(" ", "-")}
+                  className="btn-ghost btn"
+                >
+                  {entry.category}
+                </Link>
+              );
+            }
+          })}
+        </div>
       </div>
     </main>
   );

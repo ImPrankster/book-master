@@ -17,7 +17,6 @@ export interface Database {
           description: string | null
           id: string
           image_link: string | null
-          number_of_reviews: number
           price: number | null
           rating: number | null
           title: string
@@ -30,7 +29,6 @@ export interface Database {
           description?: string | null
           id?: string
           image_link?: string | null
-          number_of_reviews?: number
           price?: number | null
           rating?: number | null
           title?: string
@@ -43,7 +41,6 @@ export interface Database {
           description?: string | null
           id?: string
           image_link?: string | null
-          number_of_reviews?: number
           price?: number | null
           rating?: number | null
           title?: string
@@ -52,7 +49,11 @@ export interface Database {
       }
     }
     Views: {
-      [_ in never]: never
+      category: {
+        Row: {
+          category: string | null
+        }
+      }
     }
     Functions: {
       [_ in never]: never
