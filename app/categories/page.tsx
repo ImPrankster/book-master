@@ -16,12 +16,13 @@ const CategoriesPage = async () => {
     <main>
       <label className="p-5 text-5xl font-bold">Categories</label>
       <section className="rounded-box m-4 flex h-full flex-wrap justify-center p-4">
-        {data.map((entry) => {
+        {data.map((entry, i) => {
           if (entry.category) {
             return (
               <Link
                 href={"/categories/" + entry.category.replaceAll(" ", "-")}
                 className="card m-2 bg-primary shadow-2xl ring-base-300 ring-offset-1 hover:ring-4 focus:bg-primary-focus"
+                key={i}
               >
                 <div className="card-body justify-end">
                   <h2 className="card-title text-base-content">

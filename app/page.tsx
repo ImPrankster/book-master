@@ -41,9 +41,9 @@ export default async function Home() {
         <label htmlFor="" className="p-5 text-2xl font-bold italic">
           Newly added
         </label>
-        <section className="rounded-box m-4 grid h-full grid-flow-col space-x-4 overflow-x-auto p-4 ring-2 ring-base-300">
-          {data.map((info) => (
-            <InfoCard data={info} />
+        <section className="rounded-box grid h-full grid-flow-col space-x-4 overflow-x-auto">
+          {data.map((info, i) => (
+            <InfoCard data={info} key={i} />
           ))}
         </section>
       </div>
@@ -52,12 +52,13 @@ export default async function Home() {
           Categories
         </label>
         <div className="rounded-box flex h-full flex-wrap justify-center p-4">
-          {categoryData.map((entry) => {
+          {categoryData.map((entry, i) => {
             if (entry.category) {
               return (
                 <Link
                   href={"/categories/" + entry.category.replaceAll(" ", "-")}
                   className="btn-ghost btn"
+                  key={i}
                 >
                   {entry.category}
                 </Link>

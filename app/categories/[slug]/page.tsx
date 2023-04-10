@@ -29,8 +29,8 @@ const CategoriesInnerPage = async ({
           {params.slug.replaceAll("-", " ")}
         </label>
         <section className="rounded-box m-4 flex h-full flex-wrap justify-center p-4">
-          {data.map((info) => (
-            <InfoCard data={info} />
+          {data.map((info, i) => (
+            <InfoCard data={info} key={i} />
           ))}
         </section>
       </div>

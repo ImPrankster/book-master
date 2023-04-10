@@ -12,7 +12,7 @@ const InfoCard = ({
         {data.image_link && <img src={data.image_link} alt="Shoes" />}
       </figure>
       <div className="card-body justify-end">
-        <h2 className="max-h-36 overflow-y-scroll text-lg font-semibold">
+        <h2 className="max-h-36 overflow-y-auto text-lg font-semibold">
           {data.title}
         </h2>
         <h2 className="text-end font-mono text-xl">£{data.price}</h2>
