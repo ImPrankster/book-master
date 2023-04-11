@@ -21,11 +21,6 @@ const Header = () => {
                 Categories
               </Link>
             </li>
-            <li>
-              <Link className="btn-ghost btn" href="/search">
-                Search
-              </Link>
-            </li>
           </ul>
         </div>
       </div>

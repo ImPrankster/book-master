@@ -1,5 +1,5 @@
-import React from "react";
 import type { Database } from "@/utils/types/supabase";
+import Link from "next/link";
 
 const InfoCard = ({
   data,
@@ -17,7 +17,9 @@ const InfoCard = ({
         </h2>
         <h2 className="text-end font-mono text-xl">£{data.price}</h2>
         <div className="card-actions justify-end">
-          <button className="btn-primary btn">Details</button>
+          <Link href={"/upc/" + data.upc} className="btn-primary btn">
+            Details
+          </Link>
         </div>
       </div>
     </div>

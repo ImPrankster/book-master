@@ -13,6 +13,13 @@ export default function RootLayout({
 }) {
   return (
     <html data-theme="bumblebee" lang="en">
+      <head>
+        <title>Book Master</title>
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
+      </head>
       <body>
         <Header />
         <main className="p-8">{children}</main>
