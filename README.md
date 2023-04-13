@@ -2,7 +2,7 @@
 
 ## Project overview
 
-In this project we created a web scraper using python, various API endpoints, and a website displaying the data. This the repository contains code for the website as well as API endpoints.
+In this project we created a web scraper using python, various API endpoints, and a website displaying the data. This repository contains code for the website as well as API endpoints.
 
 ## Tech Stack
 
@@ -12,7 +12,7 @@ This website is built with [TypeScript](https://www.typescriptlang.org/) + [Next
 
 [Next.js](https://nextjs.org/) is a meta-framework built on top of [React](https://react.dev/) that allows you to render web pages on the server, which is exactly what we need as our project do not need to fetch data dynamically on the client side. Leveraging server-side rendering gives us blazing fast load time. React is a popular open-source JavaScript library used for building user interfaces for web and mobile applications. It allows developers to create reusable UI components and efficiently update the UI in response to changes in data, without the need for manually manipulating the DOM. Using React allows us to build our website with minimal boiler plate and code repetition.
 
-[Supabase](https://supabase.com/) is a serverless database solution similar to [Firebase](https://firebase.google.com/), but uses a [PostgresSQL](https://www.postgresql.org/) as its backend that allows a similar experience to operating SQL databases (in respect to noSQL databases Firebase uses) as well as a more type-safe way to store data. Serverless means we don't have to worry about maintaining a server environment.
+[Supabase](https://supabase.com/) is a serverless database solution similar to [Firebase](https://firebase.google.com/), but uses [PostgresSQL](https://www.postgresql.org/) as its backend that allows a similar experience to operating SQL databases (in respect to noSQL databases Firebase uses) as well as a more type-safe way to store data. Serverless means we don't have to worry about maintaining a server environment.
 
 [Tailwind CSS](https://tailwindcss.com/) is a CSS framework that contains many utility classes which you can use out-of-the-box. We also paired it with [Daisy UI](https://daisyui.com/) to leverage more carefully-designed utility classes. This allows us to build a beautiful & responsive UI system amazingly fast.
 

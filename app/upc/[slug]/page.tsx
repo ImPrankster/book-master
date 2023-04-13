@@ -1,3 +1,14 @@
+/*This is a Next.js page component that shows the details of a single book based on its upc value, which is passed as a parameter in the URL slug. Here's how the code works:
+
+It imports the supabase object from a utility file, which is used to connect to the Supabase database.
+It defines a function component called BookDetailPage that receives an object containing the slug parameter.
+The function makes a query to the book table of the database using the upc value passed in the parameter.
+If there's an error with the query, the function throws an error.
+If no data is returned by the query, the function throws another error.
+If more than one book is found, the function throws a third error.
+If the query returns one book, the function assigns its information to a variable called bookInfo.
+The component returns an article element that displays the book information in HTML format, including the title, rating, price, UPC, and description. If the book has an image link, it's also displayed.*/
+
 import { supabase } from "@/utils/supabase";
 
 const BookDetailPage = async ({
