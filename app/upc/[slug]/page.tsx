@@ -34,7 +34,7 @@ const BookDetailPage = async ({
       <h1>{bookInfo.title}</h1>
       <div>
         {bookInfo.rating &&
-          [...Array(bookInfo.rating)].map((d, i) => (
+          [...Array(bookInfo.rating)].map((_, i) => (
             <i className="material-icons text-3xl text-secondary" key={i}>
               star_rate
             </i>
